@@ -1,6 +1,6 @@
 # Netlify Connect
 
-Connect your WordPress backend to Netlify. This plugin is built to be used with the Koval Gatsby WordPress boilerplate.
+Connect your WordPress backend to Netlify
 
 ### Getting Started
 
