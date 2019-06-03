@@ -143,10 +143,10 @@ final class Littlebot_Netlify {
 	public function includes() {
 		new LBN_Assets( $this );
 		new LBN_Settings( $this );
-		new LBN_Meta_Fields( $this );
 		new LBN_Post( $this );
 		new LBN_Status_Badge( $this );
 		new LBN_Staging_Status( $this );
+		new LBN_Custom( $this );
 	} // END OF PLUGIN CLASSES FUNCTION
 
 	/**
