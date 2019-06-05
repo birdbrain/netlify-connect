@@ -44,7 +44,7 @@ class LBN_Custom {
 	 * @return void
 	 */
 	public function hooks() {
-    add_filter( 'preview_post_link', array( $this, 'set_preview_link') );
+    add_filter( 'preview_post_link', array( $this, 'set_preview_link'), 10, 2 );
     add_filter( 'rest_prepare_revision', array( $this, 'setup_revision_response'), 10, 2 );
 	}
 

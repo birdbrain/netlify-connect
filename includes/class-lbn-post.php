@@ -43,8 +43,8 @@ class LBN_Post {
 	 * @return void
 	 */
 	public function hooks() {
-		add_action( 'save_post', array( $this, 'save_post' ), 10, 2 );
-		add_action( 'delete_post', array( $this, 'save_post' ), 10, 2 );
+		add_action( 'save_post', array( $this, 'save_post' ), 10, 3 );
+		add_action( 'delete_post', array( $this, 'save_post' ), 10, 3 );
 		add_action( 'wp_insert_post_data', array( $this, 'insert_post' ), 10, 3 );
 		// add_action( 'manage_posts_columns', array( $this, 'show_publish_status' ), 10, 3 );
 		// add_action( 'manage_posts_custom_column', array( $this, 'build_column' ), 30, 3 );
@@ -131,12 +131,13 @@ class LBN_Post {
 	 * @param boolean $update  Is this an update.
 	 * @return void
 	 */
-	public function save_post( $post_id, $post ) {
+	public function save_post( $post_id, $post = null, $update = false ) {
 		// Bail if it's a auto-draft, we're doing auto save or ajax.
 		if (
 			isset( $post->post_status ) && 'auto-draft' === $post->post_status ||
 			defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ||
-			defined( 'DOING_AJAX' ) && DOING_AJAX
+			defined( 'DOING_AJAX' ) && DOING_AJAX ||
+			( ! $update )
 			) {
 			return;
 		}
