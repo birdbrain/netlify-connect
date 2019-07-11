@@ -83,18 +83,18 @@ class LBN_Settings {
 		);
 
 		add_settings_section(
-			'setting_section_id',
-			'Build Hooks',
+			'production_section_id',
+			'Production Environment',
 			false,
 			'netlify'
 		);
 
 		add_settings_field(
 			'production_buildhook',
-			'Production Hook',
+			'Production Build Hook',
 			array( $this, 'prod_callback' ),
 			'netlify',
-			'setting_section_id'
+			'production_section_id'
 		);
 
 		add_settings_field(
@@ -102,39 +102,46 @@ class LBN_Settings {
 			'Production URL',
 			array( $this, 'prod_url_callback' ),
 			'netlify',
-			'setting_section_id'
-		);
-
-		add_settings_field(
-			'stage_buildhook',
-			'Stage Hook',
-			array( $this, 'stage_callback' ),
-			'netlify',
-			'setting_section_id'
-		);
-
-		add_settings_field(
-			'stage_url',
-			'Stage URL',
-			array( $this, 'stage_url_callback' ),
-			'netlify',
-			'setting_section_id'
+			'production_section_id'
 		);
 
 		add_settings_field(
 			'production_build_status_badge_url',
-			'Production Netlify Status Badge URL',
+			'Production Status Badge URL',
 			array( $this, 'production_build_status_badge_url_callback' ),
 			'netlify',
-			'setting_section_id'
+			'production_section_id'
+		);
+
+		add_settings_section(
+			'staging_section_id',
+			'Staging Environment',
+			false,
+			'netlify'
+		);
+
+		add_settings_field(
+			'stage_buildhook',
+			'Staging Build Hook',
+			array( $this, 'stage_callback' ),
+			'netlify',
+			'staging_section_id'
+		);
+
+		add_settings_field(
+			'stage_url',
+			'Staging URL',
+			array( $this, 'stage_url_callback' ),
+			'netlify',
+			'staging_section_id'
 		);
 
 		add_settings_field(
 			'staging_build_status_badge_url',
-			'Staging Netlify Status Badge URL',
+			'Staging Status Badge URL',
 			array( $this, 'staging_build_status_badge_url_callback' ),
 			'netlify',
-			'setting_section_id'
+			'staging_section_id'
 		);
 	}
 
@@ -243,5 +250,5 @@ class LBN_Settings {
 			isset( $this->options['production_build_status_badge_url'] ) ? esc_attr( $this->options['production_build_status_badge_url'] ) : ''
 		);
 	}
-	
+
 }
