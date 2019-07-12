@@ -137,7 +137,7 @@ class LBN_Status_Badge {
 						if (productionBadge) productionBadge.src = productionBadge.src.split("?")[0] + "?" + new Date().getTime();
 						if (stagingBadge) stagingBadge.src = stagingBadge.src.split("?")[0] + "?" + new Date().getTime();
 					}
-					setInterval(updateBadges, 1000);
+					setInterval(updateBadges, 10000);
 				}
 			</script>
 		';
