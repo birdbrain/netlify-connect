@@ -55,12 +55,12 @@ class LBN_Status_Badge {
 	 * @return void
 	 */
 	public function add_status_badge($admin_bar) {
-    $production_build_status_badge_url = $this->options['production_build_status_badge_url'];
-    $staging_build_status_badge_url = $this->options['staging_build_status_badge_url'];
-    $production_buildhook = $this->options['production_buildhook'];
-    $stage_buildhook = $this->options['stage_buildhook'];
-    $production_url = $this->options['production_url'];
-    $stage_url = $this->options['stage_url'];
+		$production_build_status_badge_url = array_key_exists( 'production_build_status_badge_url', $this->options ) ? $this->options['production_build_status_badge_url'] : '';
+    $staging_build_status_badge_url = array_key_exists('staging_build_status_badge_url',$this->options) ? $this->options['staging_build_status_badge_url'] : '';
+    $production_buildhook = array_key_exists( 'production_buildhook', $this->options ) ? $this->options['production_buildhook'] : '';
+    $stage_buildhook = array_key_exists( 'stage_buildhook', $this->options) ? $this->options['stage_buildhook'] : '';
+    $production_url = array_key_exists( 'production_url',$this->options) ? $this->options['production_url'] : '';
+    $stage_url = array_key_exists( 'stage_url', $this->options ) ? $this->options['stage_url'] : '';
 		$current_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     if ($production_build_status_badge_url && $production_buildhook && $production_url) {
       $admin_bar->add_menu( array(
