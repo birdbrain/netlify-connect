@@ -56,7 +56,8 @@ class LBN_Custom {
 	 public function set_preview_link( $link, $post ) {
 		 $queried_object = get_queried_object();
 		 $post_obj = get_post($post);
-		 return $this->options['production_url'] . '/'
+		 $production_url = array_key_exists('production_url', $this->options) ? $this->options['production_url'] : '';
+		 return $production_url . '/'
 			 . 'preview/'
 			 . $post_obj->post_type
 			 . '?preview_id=' . get_the_ID()

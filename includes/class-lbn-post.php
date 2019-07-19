@@ -143,8 +143,8 @@ class LBN_Post {
 		}
 
 		// Get netlify buildhooks from plugin settings
-		$production_buildhook = $this->options['production_buildhook'];
-    $stage_buildhook = $this->options['stage_buildhook'];
+		$production_buildhook = array_key_exists('production_buildhook', $this->options) ? $this->options['production_buildhook'] : '';
+    $stage_buildhook = array_key_exists('stage_buildhook', $this->options) ? $this->options['stage_buildhook'] : '';
 
 		// Deploy to staging if buildhook exists
 		if ($stage_buildhook) {
@@ -173,8 +173,8 @@ class LBN_Post {
 	------------------------------------------------------------------------ */
 
 	public function replace_edit_slug_url(){
-		$prod_url = $this->options['production_url'];
-		$stage_url = $this->options['stage_url'];
+		$prod_url = array_key_exists('production_url', $this->options) ? $this->options['production_url'] : '';
+		$stage_url = array_key_exists('stage_url', $this->options) ? $this->options['stage_url'] : '';
 		$wp_url_escaped = str_replace('/', '\/', get_site_url());
 		if ( empty($prod_url) && empty($stage_url) ) return null;
 		// If prod_url exists
@@ -198,7 +198,7 @@ class LBN_Post {
 
 	public function add_stage_url_permalink( $post_object ) {
 		$stage_status = (bool) get_post_meta( $post_object->ID, 'published_stage', true );
-		$stage_url = $this->options['stage_url'];
+		$stage_url = array_key_exists('stage_url', $this->options) ? $this->options['stage_url'] : '';
 		if ($stage_status && $stage_url) {
 			echo '
 			<div id="edit-slug-box">
