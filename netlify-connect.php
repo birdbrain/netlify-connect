@@ -1,17 +1,17 @@
 <?php
 /**
  * Plugin Name: Netlify Connect
- * Plugin URI:  https://www.justinwhall.com
+ * Plugin URI:  https://birdbrain.com.au
  * Description: Connect your WordPress website to Netlify.com. Modified from standard for Koval
- * Version:     0.9.0
- * Author:      jwind
- * Author URI:  https://www.justinwhall.com
- * Donate link: https://www.justinwhall.com
+ * Version:     2.0.0
+ * Author:      BirdBrain
+ * Author URI:  https://birdbrain.com.au
+ * Donate link: https://birdbrain.com.au
  * License:     GPLv2
  * Text Domain: netlify-connect
  * Domain Path: /languages
  *
- * @link    https://www.justinwhall.com
+ * @link    https://birdbrain.com.au
  *
  * @package Littlebot_netlify
  * @version 0.9.0
@@ -32,6 +32,16 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
+
+
+ require 'plugin-updates/plugin-update-checker.php';
+ //Use version 2.0 of the update checker.
+ $MyUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+     'http://datasource.birdbrain.com.au/plugin-updates/netlify-connect/info.json',
+     __FILE__,
+     'netlify-connect'
+ );
+
 
 /**
  * Autoloads files with classes when needed
@@ -141,12 +151,8 @@ final class Littlebot_Netlify {
 	 * @since  0.9.0
 	 */
 	public function includes() {
-		new LBN_Assets( $this );
 		new LBN_Settings( $this );
-		new LBN_Post( $this );
 		new LBN_Status_Badge( $this );
-		new LBN_Staging_Status( $this );
-		new LBN_Custom( $this );
 	} // END OF PLUGIN CLASSES FUNCTION
 
 	/**
