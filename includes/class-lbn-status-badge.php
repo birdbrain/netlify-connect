@@ -65,7 +65,7 @@ class LBN_Status_Badge {
     if ($production_build_status_badge_url && $production_buildhook && $production_url) {
       $admin_bar->add_menu( array(
           'id'    => 'netlify--prod-build-status-badge',
-          'title' => '<span style="color:#eee;margin-right:10px;"></span><img id="netlify--production-build-status-badge" src=' . $production_build_status_badge_url . ' />',
+          'title' => '<img id="netlify--production-build-status-badge" src=' . $production_build_status_badge_url . ' />',
           'href'  => '#',
           'meta'  => array(
               'title' => __('Production Build Status'),
