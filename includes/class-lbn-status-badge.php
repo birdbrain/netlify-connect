@@ -65,7 +65,7 @@ class LBN_Status_Badge {
     if ($production_build_status_badge_url && $production_buildhook && $production_url) {
       $admin_bar->add_menu( array(
           'id'    => 'netlify--prod-build-status-badge',
-          'title' => '<span style="color:#eee;margin-right:10px;">Production: </span><img id="netlify--production-build-status-badge" src=' . $production_build_status_badge_url . ' />',
+          'title' => '<span style="color:#eee;margin-right:10px;"></span><img id="netlify--production-build-status-badge" src=' . $production_build_status_badge_url . ' />',
           'href'  => '#',
           'meta'  => array(
               'title' => __('Production Build Status'),
@@ -73,21 +73,21 @@ class LBN_Status_Badge {
       ));
 			$admin_bar->add_menu( array(
         'parent'    => 'netlify--prod-build-status-badge',
-        'id'    => 'netlify--visit-production',
-        'title'     => 'Visit Site',
-        'href'  => $production_url,
+        'id'    => 'netlify--preview-production',
+        'title'     => 'Preview',
+        'href'  => $production_url . '?preview=true',
         'meta'  => array(
           'target' => '_blank',
-					'title' => __('Visit production site'),
+					'title' => __('Preview'),
         )
       ));
 			$admin_bar->add_menu( array(
           'parent'    => 'netlify--prod-build-status-badge',
 					'id' 		=> 'netlify--rebuild-production',
-          'title' => 'Trigger Rebuild',
+          'title' => 'Rebuild',
           'href'  => add_query_arg('rebuild_production', 0, $current_url),
           'meta'  => array(
-              'title' => __('Rebuild production site'),
+              'title' => __('Rebuild'),
           ),
       ));
     }
