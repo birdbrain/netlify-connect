@@ -75,7 +75,7 @@ class LBN_Status_Badge {
         'parent'    => 'netlify--prod-build-status-badge',
         'id'    => 'netlify--preview-production',
         'title'     => 'Preview',
-        'href'  => $production_url . '?preview=true',
+        'href'  => $production_url . '?prev=true',
         'meta'  => array(
           'target' => '_blank',
 					'title' => __('Preview'),
