@@ -129,6 +129,16 @@ class LBN_Status_Badge {
 	 */
 	public function refresh_status_badge() {
 		echo '
+			<style>
+				#wp-admin-bar-netlify--prod-build-status-badge > a, #wp-admin-bar-netlify--staging-build-status-badge > a {
+				  display: flex!important;
+				  align-items: center;
+				  justify-content: center;
+				}
+				#netlify--production-build-status-badge, #netlify--staging-build-status-badge {
+				  height: 18px;
+				}
+			</style>
 			<script>
 				window.onload = function() {
 					var productionBadge = document.getElementById("netlify--production-build-status-badge");
