@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: Netlify Connect
+ * Plugin Name: BirdBrain Netlify Connect
  * Plugin URI:  https://birdbrain.com.au
  * Description: Connect your WordPress website to Netlify.com. Modified from standard for Koval
- * Version:     2.0.3
+ * Version:     2.0.4
  * Author:      BirdBrain
  * Author URI:  https://birdbrain.com.au
  * Donate link: https://birdbrain.com.au
