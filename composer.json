@@ -9,12 +9,5 @@
             "name": "BirdBrain",
             "email": "digital@birdbrain.com.au"
         }
-    ],
-    "repositories": [{
-      "type": "vcs",
-      "url": "git@github.com:birdbrain/netlify-connect.git"
-    }],
-    "require": {
-      "birdbrain/netlify-connect": "1.0.1"
-    }
+    ]
 }
