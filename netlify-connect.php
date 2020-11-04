@@ -180,7 +180,7 @@ final class Littlebot_Netlify {
 		}
 
 		// If we already have options, don't create defaults.
-		if ( get_option( 'lb_netlify' ) ) {
+		if ( get_option( 'lb_netlifly' ) ) {
 			return;
 		}
 
@@ -189,7 +189,7 @@ final class Littlebot_Netlify {
 			'stage_buildhook' => '',
 		);
 
-		update_option( 'lb_netlify', $options );
+		update_option( 'lb_netlifly', $options );
 
 		// Make sure any rewrite functionality has been loaded.
 		flush_rewrite_rules();
