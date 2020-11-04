@@ -1,0 +1,12 @@
+{
+    "name": "birdbrain/netlify-connect",
+    "description": "Plugin lets you configure your netlify badge and build hooks",
+    "type": "wordpress-plugin",
+    "authors": [
+        {
+            "name": "BirdBrain",
+            "email": "digital@birdbrain.com.au"
+        }
+    ],
+    "require": {}
+}
